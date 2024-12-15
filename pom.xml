@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.booreg</groupId>
+    <artifactId>bingo-musical</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		
+		<!-- Skip testing --> <maven-surefire-plugin.skiptests>false</maven-surefire-plugin.skiptests>
+
+		<!-- Pluings -->
+
+		<maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+		<maven-source-plugin.version>3.2.0</maven-source-plugin.version>
+		<maven-dependency-plugin.version>3.3.0</maven-dependency-plugin.version>
+		<maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
+
+		<!-- Apache POI --> <poi-ooxml.version>5.3.0</poi-ooxml.version>
+
+	</properties>
+
+	<dependencies>
+
+		<!-- Apache POI -->
+	
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi-ooxml.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+		
+			<!-- Basic Maven compiler plugin -->
+	
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+			</plugin>
+	
+			<!-- Attaches source to the compiled classes -->
+	
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven-source-plugin.version}</version>
+			</plugin>
+			
+			<!-- Dependency validation plug-in -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>${maven-dependency-plugin.version}</version>
+			</plugin>
+			
+			<!-- Unit testing -->
+
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+		        <configuration>
+		          <skipTests>${maven-surefire-plugin.skiptests}</skipTests>
+		        </configuration>
+   	        </plugin>
+
+		</plugins>
+	</build>
+  
+</project>
